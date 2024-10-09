@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="login">
+        <div class="session">
+            <div class="left"></div>
+            <div class="log-in">
+                <h4>L <span>For You</span></h4>
+                <p>Welcome back! Log in to your account to view today's clients:</p>
+                <b-form :label="'Email'">
+                    <b-input ref="email" v-model:value="email"></b-input>
+                </b-form>
+                <div class="icon"></div>
+                <b-form :label="'Password'">
+                    <b-input ref="password" v-model:value="password"></b-input>
+                </b-form>
+                <div class="icon"></div>
+                <b-button @click="onClickSubmit()">Log in</b-button>
+            </div> 
+        </div>
+    </div>
+</div>

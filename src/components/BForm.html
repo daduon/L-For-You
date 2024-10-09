@@ -1,0 +1,7 @@
+<div class="inp_box was-validated">
+    <label class="form-label">{{ label + ':' }}</label>
+    <div class="inp">
+        <slot></slot>
+    </div>
+    <span v-if="msg" class="text-danger">{{ msg }}</span>
+</div>

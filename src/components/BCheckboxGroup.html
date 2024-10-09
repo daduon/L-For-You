@@ -1,0 +1,4 @@
+<div v-for="option in options" :key="option">
+    <input type="checkbox" :value="option" v-model="internalValue" @change="updateValue" />
+    <label class="checkbox_text ml_8">{{ option.value }}</label>
+</div>

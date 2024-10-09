@@ -1,0 +1,10 @@
+export { default as BButton } from "./BButton.vue";
+export { default as BInput } from "./BInput.vue";
+export { default as BForm } from "./BForm.vue";
+export { default as BCheckbox } from "./BCheckbox.vue";
+export { default as BRadio } from "./BRadio.vue";
+export { default as BSelect } from "./BSelect.vue";
+export { default as BDatepicker } from "./BDatepicker.vue";
+export { default as BTextarea } from "./BTextarea.vue";
+export { default as Alert } from "./alert/Alert.vue";
+export { default as Confirm } from "./confirm/Confirm.vue";

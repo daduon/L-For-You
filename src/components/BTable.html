@@ -1,0 +1,34 @@
+<div class="tableWrap">
+    <table class="table table-bordered">
+        <colgroup>
+            <col v-for="(data, index) in headersData" :key="index" :style="`width: ${data.width}px;`" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th v-for="(header, index) in headersData" :key="index">
+                    <template v-if="$slots['TH' + header.key]">
+                        <slot :name="'TH' + header.key" :value="header.title"></slot>
+                    </template>
+                    <template v-else>
+                        <span>{{ header.title }}</span>
+                    </template>
+                    <!-- <span v-if="header.showSort" @click.stop="checkSort(headerData.headerList, header)" :class="showSortIcon(header.sortBy)"></span> -->
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody_section" v-if="dataList.length > 0">
+            <tr v-for="(dataRow, indexRow) in dataList" :key="indexRow" @click="headersData.clickRow ? headersData?.clickRow(dataRow) : null">
+                <td v-for="(data, index) in headersData" :key="index" :class="data.styleData">
+                    <template v-if="$slots['TD' + data.key]">
+                        <slot :name="'TD' + data.key" :list="dataRow" :value="dataRow[data.key]"></slot>
+                    </template>
+                    <template v-else>
+                        <label v-if="data.key === 'noNumber'">{{ indexRow + 1 }}</label>
+                        <button v-else-if="data.clickData" @click.stop="data.clickData(dataRow)">{{ data.displayText }}</button>
+                        <label v-else>{{ dataRow[data.key] }}</label>
+                    </template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
